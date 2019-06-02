@@ -23,7 +23,7 @@ type Person struct {
 // 2. Pointer receivers (can change/ mutate properties of an object)
 
 // Greeting method (Value receiver)
-// (p Person) is an identifier. The identifier is used similar to the "this" keyword in OOP languages
+// (p Person) is a receiver. The receiver is used similar to the "this" keyword in OOP languages
 func (p Person) greet() string {
 	// The string converter package's Itoa() function is used to convert the age to a string here
 	// You can also use the string() method which is built-in by default and needs no package imports

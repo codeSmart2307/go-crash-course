@@ -27,6 +27,11 @@ func main() {
 	fmt.Println(fruitSlice)
 	fmt.Println(fruitSlice[2])
 	fmt.Println(len(fruitSlice))
-	fmt.Println(fruitSlice[1: 3])
+	fmt.Println(fruitSlice[1: 3]) // fruitSlice[startIndexInclusive: upToNotInclusive]
+
+	// Byte Slices
+	// Byte slices are slices of type byte (ASCII)
+	greeting := "Hi there!"
+	fmt.Println([]byte(greeting)) // We use type conversion here to convert a string to a byte slice
 
 }

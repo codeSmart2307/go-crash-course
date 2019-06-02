@@ -1,0 +1,51 @@
+* Go is a PASS-BY-VALUE language
+
+* Pass by value means that whenever we pass a value into a function, Go takes that value and copy all that data
+  into a new memory address.
+* Therefore, if we decide to update the value inside the function, Go actually updates the copy and not the original
+  value at the original memory address
+* Therefore, when we print out the original variable, the value will not have been changed.
+
+* This is why Go has POINTERS
+
+&<variableName> - Requests memory address of the value the variable is pointing at
+*<pointerName>  - Requests the value this memory address is pointing at
+
+eg:
+    value := "Hello"
+    pointer := &value // Assigns reference to memory address that "Hello" is stored at
+    value = *pointer  // Assigns reference to value which is stored at given memory address
+
+* Turn address into value with *address
+* Turn value into address with &value
+
+========================================================================================================================
+
+IMPORTANT
+==========
+
+* An important distinction to make is that if the "*" is prefixed to a TYPE and not a VARIABLE (for example,
+  in a function argument), this does NOT mean that the function is expecting a reference to a value
+* In fact, this just means that the function is expecting a reference to a pointer to be passed as an argument to the
+  function
+* This is known as a TYPE DESCRIPTION. It does not manipulate the type in any way. It is only there for readability
+  purposes and for the compiler to understand the function expects a pointer as an argument.
+
+========================================================================================================================
+
+* In Go, we only have to worry about pointers with variables of the following types
+            * int
+            * float
+            * string
+            * bool
+            * struct
+* These types are also known as VALUE TYPES
+
+* Then there are types that we do not need to worry about pointers with
+            * slices
+            * maps
+            * channels
+            * pointers
+            * functions (Yes, functions can be passed around as arguments to a function)
+* These types are known as REFERENCE TYPES
+

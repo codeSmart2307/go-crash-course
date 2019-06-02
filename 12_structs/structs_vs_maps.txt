@@ -1,0 +1,20 @@
+Maps
+====
+
+All keys must be of the same type
+All values must be of the same type
+Keys are indexed - we can iterate over them
+Used to represent a collection of related properties
+Don't need to know all the keys at compile time
+Maps are a reference type
+
+
+Structs
+========
+
+Values can be of different types
+Keys don't support indexing
+You need to know all the different fields at compile time
+Used to represent a "thing" with a lot of different properties
+Structs are a value type
+

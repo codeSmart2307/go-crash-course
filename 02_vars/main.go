@@ -14,6 +14,12 @@ func main() {
 	name2 := "Suleka"
 	size := 1.3
 	age, email := 21, "raneesh2307@gmail.com" // Multiple variables can be instantiated in a single statement
+
+	/*
+	* := is used only when declaring and instantiating a NEW variable.
+	* To reassign an already existing variable just use =
+	*/
+
 	fmt.Println(name2, age, email, size)
 	fmt.Printf("%T\n", size)
 }
