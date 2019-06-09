@@ -1,0 +1,17 @@
+* Channels are used to communicate between running goroutines
+* Channels are the only way to maintain communication between goroutines and acts as an intermediary between all the
+  goroutines in a program
+* Channels are statically typed
+    - If we make a channel of type string, we can only use that channel for communication with strings
+
+Syntax
+======
+
+* c := make(chan string)
+    - Declaring a channel of type string
+* channel <- "hello"
+    - Send the value "hello" into the channel
+* myVariable <- channel
+    - Wait for a value to be sent to the channel and once the value is received, assign it to myVariable
+* fmt.Println(<-channel)
+    - Wait for a value to be sent to the channel and once the value is received, log it out immediately

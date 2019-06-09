@@ -1,0 +1,28 @@
+* By default every Go program runs on one single parent goroutine (similar to a Java program running on a default thread)
+* Goroutines (child goroutines) are created with the use of the "go" keyword
+* The "go" keyword is used only in front of function calls!
+
+GO SCHEDULER
+=============
+
+* The Go Scheduler acts as an intermediary between the Go program (goroutines) and the CPU
+* The Go scheduler runs one routine until it finishes or makes a blocking call (in which case it will allow another
+  goroutine -if present- to continue its work till it finishes or makes a blocking call and so on)
+* By default, the Go scheduler tries to use only one CPU core!
+* We can configure the Go scheduler to work on multiple CPU cores such that if there are multiple goroutines in the
+  program, the scheduler will assign each CPU core a single goroutine to run in parallel
+
+CONCURRENCY IS NOT PARALLELISM!!
+==============================
+
+Concurrency - A Go program is concurrent if it has the ability to load up multiple Goroutines at a time. If one thread
+              (goroutine) blocks, another one is loaded and run
+Parallelism - Applies when multiple CPU cores come into play
+            - Multiple threads (goroutines) executed at the exact same time (in parallel)
+
+IMPORTANT
+=========
+
+* The default or main goroutine, by default, does not care if child goroutines are blocked or running
+* If it reaches the end of the code, the main goroutine will exit and terminate the program
+* To combat this issue, we use CHANNELS for inter-goroutine communication
