@@ -24,6 +24,8 @@ type Person struct {
 
 // Greeting method (Value receiver)
 // (p Person) is a receiver. The receiver is used similar to the "this" keyword in OOP languages
+// In a receiver function, if we do not plan on using the receiver, we can remove the variable and just leave the
+// struct type - eg: func (Person) greet() string { <logic goes here> }
 func (p Person) greet() string {
 	// The string converter package's Itoa() function is used to convert the age to a string here
 	// You can also use the string() method which is built-in by default and needs no package imports

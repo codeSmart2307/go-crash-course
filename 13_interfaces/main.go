@@ -5,6 +5,11 @@ import (
 	"math"
 )
 
+// Interfaces are NOT generic types - Other languages like Java & C# have generic types but Go, famously, does not
+// Interfaces are IMPLICIT - We do not manually say that our custom type implements/satisfies some interface
+// Interfaces are a contract to help us manage types - If our custom type's implementation of a function is broken
+// then interfaces won't help us
+
 type Shape interface {
 	area() float64
 }
